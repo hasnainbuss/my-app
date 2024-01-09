@@ -1,0 +1,149 @@
+@import "~antd/dist/antd.css";
+/* https://stackoverflow.com/a/4069794/2077741 */
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+.App {
+  background-color: lightgray;
+}
+/* AntD Table Header and Footer*/
+tfoot th,
+tfoot td {
+  background: #fafafa;
+}
+[data-theme="dark"] tfoot th,
+[data-theme="dark"] tfoot td {
+  background: #1d1d1d;
+}
+/*------------------*/
+
+.ant-layout-sider {
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  margin: 2px 5px 2px 5px;
+}
+
+.ant-layout-header {
+  overflow-y: hidden;
+  overflow-x: auto;
+  color: #fff;
+  padding: 5px;
+  margin: 2px 5px 0px 0px;
+  height: 50px;
+}
+
+.ant-layout-content {
+  position: relative;
+  margin: 2px 5px 2px 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background: white;
+}
+
+.ant-layout-footer {
+  background: rgba(0, 0, 0, 0.54);
+  bottom: 0px;
+  width: max-content;
+  color: black;
+  font-weight: bold;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: initial;
+  height: 20px;
+  // overflow-y: scroll;
+  flex-wrap: wrap;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.ant-modal-content {
+  background: white;
+  padding: 10px;
+  min-width: 520px;
+}
+.ant-divider {
+  margin: 0px !important;
+}
+.ant-modal-body {
+  padding: 25px 10px 0px 10px;
+}
+
+.ant-modal-close-x {
+  margin: -15px;
+}
+.ant-modal-close {
+  color: gray;
+}
+
+.ant-result-content {
+  margin: 0px;
+  padding: 0%;
+}
+.hide-verticle-scroll {
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox 64 */
+  -ms-overflow-style: none; /* Internet Explorer 11 */
+  &::-webkit-scrollbar {
+    /** WebKit */
+    display: none;
+  }
+}
+.FilterDrawer {
+  .ant-drawer-header {
+    text-align: center;
+    background: #001529;
+    font-family: sans-serif;
+    font-style: italic;
+    border: 2px solid;
+    border-radius: 5px;
+    color: white;
+    .ant-drawer-title {
+      color: white;
+    }
+    button {
+      color: white;
+    }
+    button:hover {
+      color: rgb(94, 109, 194);
+    }
+  }
+  .ant-drawer-body {
+    overflow: hidden;
+    overflow-y: scroll;
+    flex-grow: 10;
+    scrollbar-width: none; /* Firefox 64 */
+    -ms-overflow-style: none; /* Internet Explorer 11 */
+    &::-webkit-scrollbar {
+      /** WebKit */
+      display: none;
+    }
+    background: #0d3962;
+    color: whitesmoke;
+    font-family: sans-serif;
+    font-style: italic;
+    border: 2px solid;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+
+    > * {
+      margin: 10px 0;
+    }
+  }
+}
+.ant-notification-notice {
+  border: 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-style: solid;
+  border-color: #d6d6d6;
+}

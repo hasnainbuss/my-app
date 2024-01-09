@@ -3,24 +3,66 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.69",
-    "@types/react": "^18.2.46",
+    "@types/node": "^16.18.70",
+    "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
+    "antd": "^5.12.8",
+    "axios": "^1.6.5",
+
+    "formik": "^2.4.5",
+    "formik-antd": "^3.0.0-beta.9",
+    "js-file-download": "^0.4.12",
+
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.0.4",
+    "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "sass": "^1.69.7",
+    "sass-loader": "^13.3.3",
+    "node-sass": "^9.0.0",
+    "css-loader": "^6.9.0",
+    "typescript": "^5.3.3",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.3.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test",
+    "react-eject": "react-scripts eject",
+    "stop": "taskkill -f -im node.exe",
+    "main": "public/electron.js",
+    "start": "concurrently \" npm run react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-build": "electron-builder",
+    "electron-pack": "npm run build --em.main=build/electron.js",
+    "release": "npm run react-build && npm run electron-build --publish=always",
+    "build": "npm run react-build && npm run electron-build"
+  },
+  "build": {
+    "appId": "com.example.electron-cra",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "icon": "build/icon.png",
+      "target": [{
+        "target": "nsis",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }]
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +81,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "electron": "^9.4.0",
+    "electron-builder": "^22.9.1"
   }
 }

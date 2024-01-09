@@ -1,0 +1,125 @@
+.portal {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  .options-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 2px 0px 2px !important;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 600px;
+    overflow: auto;
+    border: medium;
+    border-style: groove;
+    padding: 4px 20px;
+    height: 7%;
+    .options-bar-left-options {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      .options-bar-left-options-button {
+        margin-right: 6px;
+        border-radius: 10%;
+      }
+    }
+    .options-bar-right-options {
+      display: flex;
+      flex-direction: row-reverse;
+      // padding-right: 1px;
+      height: 100%;
+      align-items: center;
+
+      .options-bar-right-options-button {
+        display: flex;
+        margin: 10px;
+        border-radius: 10%;
+      }
+    }
+    .options-bar-middle-options {
+      height: 100%;
+      align-items: center;
+    }
+  }
+  .ant-table {
+    min-width: 600px;
+  }
+}
+.dashboard-details {
+  .ant-card {
+    text-align: center;
+    min-width: 200px;
+    min-height: 150px;
+    background-color: whitesmoke;
+    border: solid 2px;
+    .ant-card-head {
+      background-color: #0d3962;
+      color: white;
+    }
+  }
+
+  > * {
+    margin: 50px;
+  }
+}
+.cursor-hand {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.background-lightgray {
+  background-color: #e4c2c2;
+  cursor: pointer;
+}
+
+.background-green {
+  background-color: #74eb5f;
+  cursor: pointer;
+}
+
+.background-blue {
+  background-color: #4fa7f5;
+  cursor: pointer;
+}
+.background-yellow {
+  background-color: #dae766;
+  cursor: pointer;
+}
+
+.background-red {
+  background-color: #d36b6b;
+  cursor: pointer;
+}
+
+.data-table {
+  flex-grow: 2;
+  height: 93%;
+  .ant-spin-nested-loading {
+    height: 100%;
+    .ant-spin-container {
+      height: 100%;
+      .ant-table {
+        height: 90%;
+        .ant-table-container {
+          height: 100%;
+          .ant-table-header {
+            height: 10%;
+          }
+          .ant-table-body {
+            min-height: 90%;
+            max-height: 90%;
+            overflow: scroll;
+          }
+        }
+      }
+    }
+  }
+}
+
+.loading-spinner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  // margin-top: 35% !important;
+}
